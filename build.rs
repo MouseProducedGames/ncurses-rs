@@ -109,12 +109,12 @@ int main(void)
     print!("{}", String::from_utf8_lossy(&features.stdout));
 
     std::fs::remove_file(&src).expect(&format!("cannot delete {}", bin));
-    if binwin.is_file()
+    if Path::new(&binwin).is_file()
     {
-        ts(std::fs::remove_file(&binwin).expect(&format!("cannot delete {}", bin));
+        std::fs::remove_file(&binwin).expect(&format!("cannot delete {}", bin));
     }
     else
     {
-        ts(std::fs::remove_file(&bin).expect(&format!("cannot delete {}", bin));
+        std::fs::remove_file(&bin).expect(&format!("cannot delete {}", bin));
     }
 }
