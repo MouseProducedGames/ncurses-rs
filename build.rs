@@ -23,9 +23,9 @@ fn main() {
     let wide = cfg!(all(feature = "wide", not(target_os = "macos")));
 
     let ncurses_lib_names = if wide {
-        &["ncursesw5", "ncursesw"]
+        &["ncursesw5", "ncursesw", "libncursesw5", "libncursesw"]
     } else {
-        &["ncurses5", "ncurses"]
+        &["ncurses5", "ncurses", "libncurses5", "libncurses"]
     };
     let ncurses_lib = find_library(ncurses_lib_names);
 
